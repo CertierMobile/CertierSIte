@@ -28,7 +28,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all cards and sections
-document.querySelectorAll('.download-card, .tier-item, .social-card').forEach(el => {
+document.querySelectorAll('.download-card, .tier-item, .social-card, .settings-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
