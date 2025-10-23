@@ -35,34 +35,12 @@ document.querySelectorAll('.download-card, .tier-item, .social-card').forEach(el
     observer.observe(el);
 });
 
-// Add parallax effect to particles
-document.addEventListener('mousemove', (e) => {
-    const particles = document.querySelectorAll('.particle');
-    const mouseX = e.clientX / window.innerWidth;
-    const mouseY = e.clientY / window.innerHeight;
-
-    particles.forEach((particle, index) => {
-        const speed = (index + 1) * 0.5;
-        const x = (mouseX - 0.5) * speed * 20;
-        const y = (mouseY - 0.5) * speed * 20;
-        
-        particle.style.transform = `translate($${x}px,$$ {y}px)`;
-    });
-});
-
 // Add hover effect sound (visual feedback)
 document.querySelectorAll('.download-btn, .social-card').forEach(element => {
     element.addEventListener('mouseenter', function() {
         this.style.transition = 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
     });
 });
-
-// Dynamic background gradient shift
-let hue = 250;
-setInterval(() => {
-    hue = (hue + 0.5) % 360;
-    document.querySelector('.background-animation').style.filter = `hue-rotate(${hue - 250}deg)`;
-}, 100);
 
 // Add click ripple effect
 function createRipple(event) {
